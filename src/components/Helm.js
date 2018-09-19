@@ -7,7 +7,7 @@ class Helm extends Component {
       <div className="row">
         <div className="col-sm-2">
           <button className="btn btn-link">
-            <img src={helmIcon} style={{ width: '32px', height: '32px' }} />
+            <img src={helmIcon} style={{ width: '32px', height: '32px' }} alt="Helm" />
           </button>
         </div>
         <div className="col-sm-6">

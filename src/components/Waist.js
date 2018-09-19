@@ -7,7 +7,7 @@ class Waist extends Component {
       <div className="row">
         <div className="col-sm-2">
           <button className="btn btn-link">
-            <img src={waistIcon} style={{ width: '32px', height: '32px' }} />
+            <img src={waistIcon} style={{ width: '32px', height: '32px' }} alt="Waist" />
           </button>
         </div>
         <div className="col-sm-6">
