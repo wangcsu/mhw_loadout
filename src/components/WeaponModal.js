@@ -18,6 +18,9 @@ class WeaponModal extends Component {
       weaponType: wtype
     })
   }
+  equipWeapon = (choosen) => {
+    this.props.equipWeapon(choosen)
+  }
   render() {
     const { weaponType } = this.state;
     return (
@@ -44,7 +47,7 @@ class WeaponModal extends Component {
                   </div>
                 </div>
                 <div className="col-sm-8">
-                  {weaponType ? (<WeaponList weaponType={weaponType} />) : null}
+                  {weaponType ? (<WeaponList weaponType={weaponType} equipWeapon={this.equipWeapon} />) : null}
                 </div>
               </div>
             </div>

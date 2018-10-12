@@ -2,6 +2,7 @@ import React from 'react'
 import gemOne from '../img/gem_level_1.png'
 import gemTwo from '../img/gem_level_2.png'
 import gemThree from '../img/gem_level_3.png'
+import uuid from 'uuid';
 
 const createDecoList = (one, two, three) => {
   let decoList = []
@@ -22,6 +23,9 @@ const WeaponListItem = (props) => {
   const borderStyle = {
     paddingRight: '20px',
     borderRight: '1px solid #ccc'
+  }
+  const handleEquip = () => {
+    props.equipWeapon(weapon);
   }
   return (
     <li className="list-group-item" key={weapon.name}>
@@ -45,9 +49,9 @@ const WeaponListItem = (props) => {
         <span className="col-sm-6">
           {
             createDecoList(weapon.slots.one, weapon.slots.two, weapon.slots.three).map(deco => (
-              deco === 'three' ? (<img src={gemThree} style={{ width: '20px', height: '20px' }} alt="level-3" />) : (
-                deco === 'two' ? (<img src={gemTwo} style={{ width: '20px', height: '20px' }} alt="level-2" />) : (
-                  deco === 'one' ? (<img src={gemOne} style={{ width: '20px', height: '20px' }} alt="level-1" />) : null
+              deco === 'three' ? (<img src={gemThree} style={{ width: '20px', height: '20px' }} alt="level-3" key={uuid()} />) : (
+                deco === 'two' ? (<img src={gemTwo} style={{ width: '20px', height: '20px' }} alt="level-2" key={uuid()} />) : (
+                  deco === 'one' ? (<img src={gemOne} style={{ width: '20px', height: '20px' }} alt="level-1" key={uuid()} />) : null
                 )
               )
             ))
@@ -55,7 +59,7 @@ const WeaponListItem = (props) => {
         </span>
       </div>
       <div className="row float-right">
-        <a href="#!" className="btn btn-primary btn-sm my-auto">Equip</a>
+        <button className="btn btn-primary btn-sm my-auto" data-dismiss="modal" onClick={handleEquip}>Equip</button>
       </div>
     </li>
   )
